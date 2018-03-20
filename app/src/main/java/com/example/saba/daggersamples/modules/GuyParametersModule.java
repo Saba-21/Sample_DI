@@ -1,5 +1,7 @@
-package com.example.saba.daggersamples;
+package com.example.saba.daggersamples.modules;
 
+import com.example.saba.daggersamples.models.GuyDefence;
+import com.example.saba.daggersamples.models.GuyStrength;
 
 import dagger.Module;
 import dagger.Provides;

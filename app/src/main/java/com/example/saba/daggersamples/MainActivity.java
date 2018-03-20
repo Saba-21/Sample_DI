@@ -2,20 +2,25 @@ package com.example.saba.daggersamples;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
+
+import com.example.saba.daggersamples.models.Fight;
+
+import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
+
+    @Inject
+    Fight fight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FightComponent fightComponent = DaggerFightComponent
-                .builder()
-                .build();
-        Fight fight = fightComponent.getFightInstance();
-        Toast.makeText(this, fight.showResult(), Toast.LENGTH_SHORT).show();
+        App.injectContext(this);
+
+        fight.showResult();
 
     }
+
 }
