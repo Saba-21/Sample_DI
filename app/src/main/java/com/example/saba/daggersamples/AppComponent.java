@@ -1,16 +1,17 @@
 package com.example.saba.daggersamples;
 
 import android.app.Application;
-
-import com.example.saba.daggersamples.models.Fight;
 import com.example.saba.daggersamples.modules.AppModule;
-
+import com.example.saba.daggersamples.modules.MainActivityModule;
 import javax.inject.Singleton;
 import dagger.BindsInstance;
 import dagger.Component;
 
 @Singleton
-@Component(modules = AppModule.class)
+@Component(modules = {
+        AppModule.class,
+        MainActivityModule.class
+        })
 public interface AppComponent {
 
     @Component.Builder
@@ -22,8 +23,6 @@ public interface AppComponent {
         AppComponent build();
     }
 
-    void inject (MainActivity mainActivity);
-
-    void inject (Fight fight);
+    void inject (App app);
 
 }

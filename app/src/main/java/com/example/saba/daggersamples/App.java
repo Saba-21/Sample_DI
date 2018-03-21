@@ -1,27 +1,29 @@
 package com.example.saba.daggersamples;
 
+import android.app.Activity;
 import android.app.Application;
+import javax.inject.Inject;
+import dagger.android.AndroidInjector;
+import dagger.android.DispatchingAndroidInjector;
+import dagger.android.HasActivityInjector;
 
-import com.example.saba.daggersamples.models.Fight;
+public class App extends Application implements HasActivityInjector{
 
-public class App extends Application {
-
-    private static AppComponent appComponent;
+    @Inject
+    DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        appComponent = DaggerAppComponent
+        DaggerAppComponent
                 .builder()
                 .application(this)
-                .build();
+                .build()
+                .inject(this);
     }
 
-    public static void injectContext(Fight context) {
-        appComponent.inject(context);
-    }
-
-    public static void injectContext(MainActivity context) {
-        appComponent.inject(context);
+    @Override
+    public AndroidInjector<Activity> activityInjector() {
+        return dispatchingAndroidInjector;
     }
 }

@@ -10,19 +10,19 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
-@Module(includes = GuysModule.class)
+@Module( includes = GuysModule.class )
 public class AppModule {
 
     @Provides
     @Singleton
-    public Context provideContext(@Nonnull final Application application) {
+    Context provideContext(@Nonnull final Application application) {
         return application.getApplicationContext();
     }
 
     @Provides
     @Singleton
-    public Fight getFightResult(AGuy aGuy, BGuy bGuy ){
-        return new Fight(aGuy, bGuy);
+    Fight getFightResult(AGuy aGuy, BGuy bGuy, Context context){
+        return new Fight(aGuy, bGuy, context);
     }
 
 }
