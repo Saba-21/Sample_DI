@@ -8,11 +8,11 @@ public class GuyDefence {
         return defence;
     }
 
+    private int defence;
+
     public void setDefence(int defence) {
         this.defence = defence;
     }
-
-    private int defence;
 
     public GuyDefence() {
     }

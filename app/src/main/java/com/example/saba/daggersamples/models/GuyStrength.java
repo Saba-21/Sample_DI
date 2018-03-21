@@ -8,11 +8,11 @@ public class GuyStrength {
         return strength;
     }
 
+    private int strength;
+
     public void setStrength(int strength) {
         this.strength = strength;
     }
-
-    private int strength;
 
     public GuyStrength() {
     }

@@ -13,9 +13,9 @@ public class AGuy {
         guyDefence.setDefence(9);
     }
 
-    public int getStrength(){return guyStrength.getStrength();}
+    int getStrength(){return guyStrength.getStrength();}
 
-    public int getDefence(){return guyDefence.getDefence();}
+    int getDefence(){return guyDefence.getDefence();}
 
     @Override
     public String toString() {

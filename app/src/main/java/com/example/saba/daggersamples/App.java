@@ -13,6 +13,11 @@ public class App extends Application implements HasActivityInjector{
     DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
 
     @Override
+    public AndroidInjector<Activity> activityInjector() {
+        return dispatchingAndroidInjector;
+    }
+
+    @Override
     public void onCreate() {
         super.onCreate();
         DaggerAppComponent
@@ -22,8 +27,4 @@ public class App extends Application implements HasActivityInjector{
                 .inject(this);
     }
 
-    @Override
-    public AndroidInjector<Activity> activityInjector() {
-        return dispatchingAndroidInjector;
-    }
 }

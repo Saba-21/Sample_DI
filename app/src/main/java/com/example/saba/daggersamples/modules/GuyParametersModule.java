@@ -10,12 +10,12 @@ import dagger.Provides;
 public class GuyParametersModule {
 
     @Provides
-    public GuyDefence getGuyDefence() {
+    GuyDefence getGuyDefence() {
         return new GuyDefence();
     }
 
     @Provides
-    public GuyStrength getGuyStrength() {
+    GuyStrength getGuyStrength() {
         return new GuyStrength();
     }
 

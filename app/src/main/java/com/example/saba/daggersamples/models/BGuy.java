@@ -9,13 +9,13 @@ public class BGuy {
     public BGuy(GuyStrength guyStrength, GuyDefence guyDefence) {
         this.guyStrength = guyStrength;
         this.guyDefence = guyDefence;
-        guyStrength.setStrength(7);
-        guyDefence.setDefence(8);
+        guyStrength.setStrength(5);
+        guyDefence.setDefence(4);
     }
 
-    public int getStrength(){return guyStrength.getStrength();}
+    int getStrength(){return guyStrength.getStrength();}
 
-    public int getDefence(){return guyDefence.getDefence();}
+    int getDefence(){return guyDefence.getDefence();}
 
     @Override
     public String toString() {

@@ -1,6 +1,5 @@
 package com.example.saba.daggersamples.models;
 
-
 import android.content.Context;
 import android.widget.Toast;
 
@@ -10,7 +9,7 @@ public class Fight {
     private AGuy aGuy;
     private BGuy bGuy;
 
-    public Fight(AGuy aGuy, BGuy bGuy,Context context) {
+    public Fight(AGuy aGuy, BGuy bGuy, Context context) {
         this.aGuy = aGuy;
         this.bGuy = bGuy;
         this.context = context;

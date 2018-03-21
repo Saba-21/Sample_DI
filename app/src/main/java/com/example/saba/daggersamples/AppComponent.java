@@ -1,17 +1,11 @@
 package com.example.saba.daggersamples;
 
 import android.app.Application;
-import com.example.saba.daggersamples.modules.AppModule;
-import com.example.saba.daggersamples.modules.MainActivityModule;
-import javax.inject.Singleton;
+import com.example.saba.daggersamples.UI.ActivityContributionModule;
 import dagger.BindsInstance;
 import dagger.Component;
 
-@Singleton
-@Component(modules = {
-        AppModule.class,
-        MainActivityModule.class
-        })
+@Component(modules = {AppModule.class, ActivityContributionModule.class})
 public interface AppComponent {
 
     @Component.Builder
