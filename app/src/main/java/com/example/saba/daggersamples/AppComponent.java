@@ -7,9 +7,11 @@ import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
 import dagger.android.support.AndroidSupportInjectionModule;
 
-@Component(modules = {AppModule.class,
-        AndroidSupportInjectionModule.class,
-        ActivityBindingModule.class})
+@Component(modules = {
+        AppModule.class,
+        ActivityBindingModule.class,
+        AndroidSupportInjectionModule.class
+})
 public interface AppComponent extends AndroidInjector<DaggerApplication> {
 
     @Component.Builder
@@ -20,8 +22,6 @@ public interface AppComponent extends AndroidInjector<DaggerApplication> {
 
         AppComponent build();
     }
-
-    void inject (App app);
 
     @Override
     void inject(DaggerApplication instance);
