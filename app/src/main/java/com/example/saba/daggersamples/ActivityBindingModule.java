@@ -1,15 +1,21 @@
 package com.example.saba.daggersamples;
 
 
+import android.app.Activity;
 import com.example.saba.daggersamples.UI.MainActivity;
-import com.example.saba.daggersamples.UI.MainActivityModule;
+import com.example.saba.daggersamples.UI.MainSubcomponent;
+import dagger.Binds;
 import dagger.Module;
-import dagger.android.ContributesAndroidInjector;
+import dagger.android.ActivityKey;
+import dagger.android.AndroidInjector;
+import dagger.multibindings.IntoMap;
 
-@Module
-public abstract class ActivityBindingModule {
+@Module(subcomponents = MainSubcomponent.class)
+abstract class ActivityBindingModule {
 
-    @ContributesAndroidInjector(modules = MainActivityModule.class)
-    public abstract MainActivity contributeMainActivityInjector();
+    @Binds
+    @IntoMap
+    @ActivityKey(MainActivity.class)
+    abstract AndroidInjector.Factory<? extends Activity> bindMainActivityInjectorFactory(MainSubcomponent.Builder builder);
 
 }
