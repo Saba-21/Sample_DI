@@ -10,7 +10,7 @@ public class AGuy {
         this.guyStrength = guyStrength;
         this.guyDefence = guyDefence;
         guyStrength.setStrength(8);
-        guyDefence.setDefence(9);
+        guyDefence.setDefence(89);
     }
 
     int getStrength(){return guyStrength.getStrength();}
