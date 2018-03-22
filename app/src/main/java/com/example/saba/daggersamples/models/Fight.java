@@ -10,7 +10,7 @@ public class Fight {
     private AGuy aGuy;
     private BGuy bGuy;
 
-    public Fight(AGuy aGuy, BGuy bGuy, Context context) {
+    Fight(AGuy aGuy, BGuy bGuy, Context context) {
         this.aGuy = aGuy;
         this.bGuy = bGuy;
         this.context = context;
