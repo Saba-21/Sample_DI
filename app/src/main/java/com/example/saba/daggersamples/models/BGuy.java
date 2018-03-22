@@ -6,7 +6,7 @@ public class BGuy {
     private GuyStrength guyStrength;
     private GuyDefence guyDefence;
 
-    public BGuy(GuyStrength guyStrength, GuyDefence guyDefence) {
+    BGuy(GuyStrength guyStrength, GuyDefence guyDefence) {
         this.guyStrength = guyStrength;
         this.guyDefence = guyDefence;
         guyStrength.setStrength(5);

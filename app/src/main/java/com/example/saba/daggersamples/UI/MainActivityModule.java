@@ -5,15 +5,21 @@ import android.content.Context;
 import com.example.saba.daggersamples.models.AGuy;
 import com.example.saba.daggersamples.models.BGuy;
 import com.example.saba.daggersamples.models.Fight;
-import com.example.saba.daggersamples.modules.GuysModule;
+import com.example.saba.daggersamples.models.GuysModule;
 import dagger.Module;
 import dagger.Provides;
 
 @Module(includes = GuysModule.class )
-public class MainActivityModule {
+public abstract class MainActivityModule {
 
     @Provides
-    static Fight getFightResult(AGuy aGuy, BGuy bGuy, Context context){
+    public static Fight getFightResult(AGuy aGuy, BGuy bGuy, Context context){
         return new Fight(aGuy, bGuy, context);
     }
+
+    @Provides
+    static MainPresenter provideMainPresenter(Fight fight) {
+        return new MainPresenterImpl(fight);
+    }
+
 }

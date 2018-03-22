@@ -3,6 +3,7 @@ package com.example.saba.daggersamples.models;
 import android.content.Context;
 import android.widget.Toast;
 
+
 public class Fight {
 
     private Context context;
@@ -15,7 +16,7 @@ public class Fight {
         this.context = context;
     }
 
-    public void showResult(){
+    public Toast GetResult(){
         String result;
 
         if (aGuy.getStrength()+aGuy.getDefence()>bGuy.getStrength()+bGuy.getDefence())
@@ -23,6 +24,6 @@ public class Fight {
         else
             result = bGuy.toString() + " has won the fight";
 
-        Toast.makeText(context, result, Toast.LENGTH_SHORT).show();
+        return Toast.makeText(context, result, Toast.LENGTH_SHORT);
     }
 }

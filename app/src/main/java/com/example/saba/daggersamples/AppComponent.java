@@ -1,12 +1,16 @@
 package com.example.saba.daggersamples;
 
 import android.app.Application;
-import com.example.saba.daggersamples.UI.ActivityContributionModule;
 import dagger.BindsInstance;
 import dagger.Component;
+import dagger.android.AndroidInjector;
+import dagger.android.DaggerApplication;
+import dagger.android.support.AndroidSupportInjectionModule;
 
-@Component(modules = {AppModule.class, ActivityContributionModule.class})
-public interface AppComponent {
+@Component(modules = {AppModule.class,
+        AndroidSupportInjectionModule.class,
+        ActivityBindingModule.class})
+public interface AppComponent extends AndroidInjector<DaggerApplication> {
 
     @Component.Builder
     interface Builder {
@@ -18,5 +22,8 @@ public interface AppComponent {
     }
 
     void inject (App app);
+
+    @Override
+    void inject(DaggerApplication instance);
 
 }

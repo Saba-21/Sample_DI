@@ -1,20 +1,19 @@
 package com.example.saba.daggersamples.models;
 
 
+class GuyDefence {
 
-public class GuyDefence {
-
-    public int getDefence() {
+    int getDefence() {
         return defence;
     }
 
     private int defence;
 
-    public void setDefence(int defence) {
+    void setDefence(int defence) {
         this.defence = defence;
     }
 
-    public GuyDefence() {
+    GuyDefence() {
     }
 
 }

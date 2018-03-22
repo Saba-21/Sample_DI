@@ -7,7 +7,7 @@ import dagger.Binds;
 import dagger.Module;
 
 @Module
-public abstract class AppModule {
+abstract class AppModule {
 
     @Binds
     abstract Context provideContext(@Nonnull final Application application);
